@@ -95,11 +95,12 @@ func deleteContact(c *gin.Context) {
 }
 
 func main() {
-	router := gin.Default()
-	router.GET("/contacts", getContact)
-	router.GET("/contacts/:name", contactByName)
-	router.POST("/contacts", createContact)
-	router.PATCH("/update", updateContact)
-	router.DELETE("/delete/:id", deleteContact)
-	router.Run("localhost:8080")
+	server := gin.Default()
+	server.GET("/contacts", getContact)
+	server.GET("/contacts/:name", contactByName)
+	server.POST("/contacts", createContact)
+	server.PATCH("/update", updateContact)
+	server.DELETE("/delete/:id", deleteContact)
+
+	server.Run(":8080")
 }
